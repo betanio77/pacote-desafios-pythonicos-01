@@ -11,11 +11,9 @@ def both_ends(s):
     # +++ SUA SOLUÇÃO +++
 
     if len(s) < 2:
-        s = ''
-    else:
-        s = s[:2] + s[-2:]
+        return ''
 
-    return s
+    return s[2:] + s[:2]
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
