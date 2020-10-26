@@ -12,15 +12,12 @@ e donuts(23) retorna 'Number of donuts: many'
 
 def donuts(count):
     # +++ SUA SOLUÇÃO +++
-    message = 'Number of donuts: '
-
-    if count < 10:
-        message += str(count)
-        # print('output... >> ' + message)
+    if count >= 10:
+        message = 'Number of donuts: many'
+        print('output... >> ' + message)
     else:
-        message += 'many'
-        # print('output... >> ' + message)
-
+        message = 'Number of donuts: ' + str(count)
+        print('output... >> ' + message)
     return message
 
 
