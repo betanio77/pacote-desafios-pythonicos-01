@@ -27,8 +27,13 @@ def frentestr(a):
 
 
 def front_back(a, b):
+    # +++ SUA SOLUÇÃO +++
+
     id_a_tras, a_frente = frentestr(a)
     id_b_tras, b_frente = frentestr(b)
+
+    # print('ID Tras A: >>>  ' + str(id_a_tras) + ' ' + a_frente)
+    # print('ID Tras B: >>>  ' + str(id_b_tras) + ' ' + b_frente)
 
     return ''.join((a_frente, b_frente, a[id_a_tras:], b[id_b_tras:]))
 

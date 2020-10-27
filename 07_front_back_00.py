@@ -10,27 +10,9 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
-
-def even(a):
-    if len(a) % 2 == 0:
-        return True
-    else:
-        return False
-
-
-def frentestr(a):
-    idmeio = int(len(a)/2)
-    if even(a):
-        return idmeio, a[:idmeio]
-    else:
-        return idmeio+1, a[:idmeio+1]
-
-
 def front_back(a, b):
-    id_a_tras, a_frente = frentestr(a)
-    id_b_tras, b_frente = frentestr(b)
-
-    return ''.join((a_frente, b_frente, a[id_a_tras:], b[id_b_tras:]))
+    # +++ SUA SOLUÇÃO +++
+    return
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
