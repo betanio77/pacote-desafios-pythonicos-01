@@ -15,6 +15,7 @@ def match_ends(words):
     for str in words:
         if len(str) >= 2:
             if str[0] == str[-1]:
+                # print(str)
                 i += 1
 
     return i
