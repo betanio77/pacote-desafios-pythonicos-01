@@ -12,17 +12,30 @@ Exemplo: 'The dinner is not that bad!' retorna 'The dinner is good!'
 def not_bad(s):
     # +++ SUA SOLUÇÃO +++
 
-    id_not = s.find('not')
-    id_bad = s.find('bad')
+    id_not = 0
+    id_bad = 0
+    i = 0
+    before_not = ''
+    after_bad = ''
+    list_str = s.split()
 
-    if id_not > 0:
-        if id_bad > id_not:
-            if (len(s) - 3) == id_bad:
-                return s[:id_not] + 'good'
-            else:
-                return s[:id_not] + 'good' + s[id_bad+3:]
+    for str in list_str:
+        if str == 'not' and id_not == 0:
+            id_not = i
+        elif str == 'bad' and id_bad == 0:
+            id_bad = i
+        elif id_not == 0:
+            before_not += str + ' '
+        elif id_bad != 0:
+            after_bad += str
 
-    return s
+        i += 1;
+
+    if id_bad > id_not:
+        return ''.join((before_not, 'good'))
+    else:
+        return s
+
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
