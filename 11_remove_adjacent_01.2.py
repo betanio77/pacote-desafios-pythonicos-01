@@ -16,11 +16,13 @@ def remove_adjacent(nums):
         id_list = 0
 
         for i in nums:
-            if id_list < (len(nums)):
-                if id_list == 0:
+            if id_list < (len(nums)-1):
+                print('id_list: ' + str(id_list) + '  // len(nums): ' + str(len(nums)) + '  // i: ' + str(i))
+                if i != nums[(id_list+1)]:
                     unique_list.append(i)
-                elif unique_list[-1] != i:
-                    unique_list.append(i)
+                elif id_list > 0:
+                    if unique_list[-1] != i:
+                        unique_list.append(i)
 
             id_list += 1
 

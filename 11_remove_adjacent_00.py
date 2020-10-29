@@ -10,23 +10,7 @@ Irá retornar: [1, 2, 3]
 
 def remove_adjacent(nums):
     # +++ SUA SOLUÇÃO +++
-
-    if len(nums) > 1:
-        unique_list = []
-        id_list = 0
-
-        for i in nums:
-            if id_list < (len(nums)):
-                if id_list == 0:
-                    unique_list.append(i)
-                elif unique_list[-1] != i:
-                    unique_list.append(i)
-
-            id_list += 1
-
-        return unique_list
-    else:
-        return nums
+    return
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
