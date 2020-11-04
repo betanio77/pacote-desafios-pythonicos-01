@@ -52,7 +52,7 @@ e conferindo cada etapa do seu progresso.
 """
 
 import sys
-import collections
+
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
@@ -75,26 +75,7 @@ def print_words(filename):
 
 
 def print_top(filename):
-    words = []
-    file = open(filename, "r")
-    # print(file.readline())
-
-    for line in file:
-        for str1 in line.split():
-            words.append(str1.lower())
-
-    setwords = set(words)
-    dictLetters = {}
-
-    for i in setwords:
-        dictLetters[i] = words.count(i)
-
-    counter = collections.Counter(dictLetters)
-
-    for tuplecommon in counter.most_common(20):
-        for it in tuplecommon:
-            print(str(it), end=' ')
-        print('')
+    print('Filename: ' + filename)
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os

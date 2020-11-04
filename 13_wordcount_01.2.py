@@ -89,12 +89,20 @@ def print_top(filename):
     for i in setwords:
         dictLetters[i] = words.count(i)
 
+    # listLetters = dictLetters.keys()
+    # listCounts = dictLetters.values()
+
     counter = collections.Counter(dictLetters)
 
     for tuplecommon in counter.most_common(20):
         for it in tuplecommon:
             print(str(it), end=' ')
         print('')
+
+
+    print('*****************')
+    # print(str(listLetters))
+    # print(str(listCounts))
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
