@@ -11,44 +11,7 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 
 def linear_merge(list1, list2):
     # +++ SUA SOLUÇÃO +++
-
-    listmerge = []
-    idxmerge = 0
-    idx1 = 0
-    idx2 = 0
-    hasitem1 = True
-    hasitem2 = True
-
-    while len(listmerge) < (len(list1) + len(list2)):
-        if hasitem1 and hasitem2:
-            if list1[idx1] < list2[idx2]:
-                listmerge.append(list1[idx1])
-                if idx1 < len(list1)-1:
-                    idx1 += 1
-                else:
-                    hasitem1 = False
-            else:
-                listmerge.append(list2[idx2])
-                if idx2 < len(list2)-1:
-                    idx2 += 1
-                else:
-                    hasitem2 = False
-        elif hasitem1:
-            listmerge.append(list1[idx1])
-            if idx1 < len(list1) - 1:
-                idx1 += 1
-            else:
-                hasitem1 = False
-        elif hasitem2:
-            listmerge.append(list2[idx2])
-            if idx2 < len(list2) - 1:
-                idx2 += 1
-            else:
-                hasitem2 = False
-
-        idxmerge += 1
-
-    return listmerge
+    return
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
