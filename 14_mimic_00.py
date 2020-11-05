@@ -47,27 +47,6 @@ def mimic_dict(filename):
   """Retorna o dicionario imitador mapeando cada palavra para a lista de
   palavras subsequentes."""
     # +++ SUA SOLUÇÃO +++
-
-  words = []
-  dictLetters = {}
-  file = open(filename, "r")
-  # print(file.readline())
-
-  for line in file:
-    for str1 in line.split():
-      words.append(str1.lower())
-      if len(words) == 1:
-        dictLetters.update(('', str1.lower()))
-        print('First word: //' + dictLetters.get('') + '//')
-
-  """" dictLetters[i]
-  counter = collections.Counter(dictLetters)
-
-  for tuplecommon in counter.most_common(20):
-    for it in tuplecommon:
-      print(str(it), end=' ')
-    print('') """
-
   return
 
 
