@@ -49,31 +49,60 @@ def mimic_dict(filename):
     # +++ SUA SOLUÇÃO +++
 
   words = []
+  idxpass = 0
+  word_before = ''
   dictLetters = {}
-  file = open(filename, "r")
-  # print(file.readline())
 
-  for line in file:
-    for str1 in line.split():
-      words.append(str1.lower())
-      if len(words) == 1:
-        dictLetters.update(('', str1.lower()))
-        print('First word: //' + dictLetters.get('') + '//')
+  with open(filename, "r") as file:
+    # one_line = file.readline()
+    # all_lines = file.readlines()
+    for line in file:
+      for word in line.split():
+        wordlow = word.lower()
+        words.append(wordlow)
+        if len(words) == 1:
+          dictLetters[''] = [wordlow]
+          #print('First word: //' + str(dictLetters.get('')) + '//')
+          word_before = wordlow
+        else:
+          if wordlow != word_before and word_before not in dictLetters:
+            dictLetters[word_before] = [wordlow]
+            #print('#' + str(idxpass) + ' WORD: //' + word_before + ' //  NEXT_TO: ' + str(dictLetters.get(word_before)) + ' //')
+            word_before = wordlow
+          elif wordlow != word_before:
+            if wordlow not in dictLetters[word_before]:
+              dictLetters[word_before].append(wordlow)
+              #print('#' + str(idxpass) + ' WORD: //' + word_before + ' //  NEXT_TO: ' + str(dictLetters.get(word_before)) + ' //')
+              word_before = wordlow
+          else:
+            # print('#' + str(idxpass) + ' IGNORING WORD: //' + wordlow + ' //')
+            pass
 
-  """" dictLetters[i]
-  counter = collections.Counter(dictLetters)
+        idxpass += 1
 
-  for tuplecommon in counter.most_common(20):
-    for it in tuplecommon:
-      print(str(it), end=' ')
-    print('') """
+  if word_before not in dictLetters:
+    dictLetters[word_before] = ['']
+  else:
+    dictLetters[word_before].append('')
 
-  return
+  # print('First word: // \'\' // NEXT_TO: ' + str(dictLetters.get('')) + '//')
+  # print('Last word: //' + word_before + ' // NEXT_TO: ' + str(dictLetters.get(word_before)) + '//')
+  # print(str(dictLetters))
+
+  return dictLetters
 
 
 def print_mimic(mimic_dict, word):
   """Dado o dicionario imitador e a palavra inicial, imprime texto de 200 palavras."""
     # +++ SUA SOLUÇÃO +++
+
+  print(word)
+  for i in range(200):
+    next_word = random.choice(mimic_dict[word])
+    word = next_word
+    print(str(word), end=' ')
+
+  print('')
   return
 
 
